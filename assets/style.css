@@ -1,0 +1,80 @@
+:root {
+    --background: #151515;
+    --dark-gray: #242424;
+    --green: #4ee1a0;
+    --gray: #d9d9d9;
+    --white: #fff;
+    --red: #ff6f5b;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+section {
+    height: 500px;
+    background-color: white;
+    border: solid var(--green) 1px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--white);
+    background-color: var(--background);
+}
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-left: 60px;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+.hero {
+    background-color: var(--background);
+    height: 100vh;
+    color: var(--white);
+}
+
+footer {
+    height: 500px;
+
+
+    background-color: gray;
+}
+
+nav {
+    display: flex;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-top: 75px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    width: 500px;
+    justify-content: space-around;
+}
+
+li {
+    /* width: 200px; */
+    text-decoration: none;
+}
