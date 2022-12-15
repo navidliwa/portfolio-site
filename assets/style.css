@@ -35,11 +35,11 @@ body {
 }
 
 .main-wrapper {
+    display: flex;
     flex-wrap: wrap;
     width: 90%;
     max-width: 1400px;
     margin-inline: auto;
-    /* border: 1px red solid; */
 }
 
 
@@ -47,16 +47,22 @@ header {
     max-width: 100%;
     font-size: 1.5rem;
     font-size: clamp(1.5rem, 1.02rem + 2.04vw, 2rem);
-    padding: 0 2.5vw 0 .75vw;
     background-color: var(--bg-contact);
     border-bottom: 1px var(--accent) solid;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-inline: auto;
 }
 
-nav{
+header h2 {
+    margin: .5em 0;
+    padding-inline: .5em;
+    border: 1px var(--accent) solid;
+}
+
+nav {
     display: flex;
+    align-items: center;
 }
 
 .nav-bar {
@@ -65,10 +71,13 @@ nav{
     font-size: clamp(1.5rem, 1.02rem + 2.04vw, 2rem);
 }
 
+.nav-bar a {
+    margin: 0 0 0 1.4em;
+}
+
  a {
     text-decoration: none;
     color: var(--text);
-    margin: 0 0 0 1.4em;
     transition: color var(--transition);
 }
 
@@ -85,14 +94,21 @@ a:focus {
 }
 
 .hero-text {
-    font-size: 4.5rem;
-    line-height: 2em;
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 0.6818181818181818rem + 4.363636363636364vw, 4.5rem);
 }
 
-strong{
+strong {
     color: var(--accent);
-    font-size: 6rem;
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 0.2727272727272727rem + 6.545454545454546vw, 6rem);
     position: relative;
+}
+
+.about p {
+    font-size: 0.75rem;
+font-size: clamp(0.75rem, 0.5454545454545454rem + 1.090909090909091vw, 1.5rem);
+    line-height: 2em;
 }
 
 img {
@@ -108,7 +124,6 @@ section {
     display: flex;
     flex: 0 0 100%;
     justify-content: space-between;
-    /* border: 1px var(--accent) solid; */
     border-radius: 15px;
 }
 
@@ -116,10 +131,7 @@ section h2 {
     text-align: left;
     padding: 0 .25em 0 1em;
     text-decoration: underline var(--accentd);
-    /* border: 3px solid var(--accent);
-    border-radius: 15px; */
     font-size: var(--fs-48);
-    /* line-height: 3.1; */
 }
 
 section > div{
@@ -183,6 +195,12 @@ section > div{
     opacity: 1;
 }
 
+.social-links {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
 .netrobe {
     background-size: 90%;
@@ -200,4 +218,52 @@ section > div{
 
 .placeholder {
     background-image: url("./markus-spiske-iar-afB0QQw-unsplash.jpg");
+}
+
+@media screen and (max-width: 1200px) {
+    .about, 
+    .projects, 
+    .footer {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    section h2 {
+        text-align: center;
+        padding: 0;
+    }
+
+    .about p {
+        padding: 1em 2em;
+    }
+    
+    .social-links {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .nav-bar {
+        padding: .5em 0;
+    }
+
+    .nav-bar a {
+        margin: 0 1em;
+    }
+
+    .hero-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 521) {
+    .nav-bar {
+        flex-direction: column;
+    }
 }
