@@ -58,6 +58,7 @@ header h2 {
     margin: .5em 0;
     padding-inline: .5em;
     border: 1px var(--accent) solid;
+    border-radius: .5em;
 }
 
 nav {
@@ -65,13 +66,19 @@ nav {
     align-items: center;
 }
 
-.nav-bar {
-    flex: 1 0 100%;
+/* .nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     font-size: 1.5rem;
     font-size: clamp(1.5rem, 1.02rem + 2.04vw, 2rem);
-}
+} */
 
-.nav-bar a {
+    .nav-bar {
+        display: flex;
+        flex-direction: row;
+    }
+
+.nav-bar div {
     margin: 0 0 0 1.4em;
 }
 
@@ -107,8 +114,9 @@ strong {
 
 .about p {
     font-size: 0.75rem;
-font-size: clamp(0.75rem, 0.5454545454545454rem + 1.090909090909091vw, 1.5rem);
+    font-size: clamp(0.75rem, 0.5454545454545454rem + 1.090909090909091vw, 1.5rem);
     line-height: 2em;
+    padding-right: 1em;
 }
 
 img {
@@ -139,16 +147,24 @@ section > div{
 }
 
 .projects-div a {
-    margin: 0;
+    margin: .25em;
 }
 
 .projects-div {
     padding: 1em 2em;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1fr 1fr;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr; */
     gap: 1em;
     justify-content: end;
+}
+
+.items {
+    display: flex;
+}
+
+.items div {
+    width: 50%;
 }
 
 .project {
@@ -157,7 +173,6 @@ section > div{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 0 .3em .3em;
     border: 3.5px var(--accent) solid;
     border-radius: 1em;
     background-color: var(--bg-project);
@@ -175,19 +190,20 @@ section > div{
     left: 0;
     right: 0;
     border-radius: .7em;
-    box-shadow: 
-        inset 0 0 1em var(--bg-project), 
+    box-shadow:
+        inset 0 0 1em var(--bg-project),
         0 0 1em var(--bg-project);
     opacity: 0;
     transition: opacity var(--prjct-trans);
 }
 
 .project h3 {
-    border-radius: .25em;
+    border-radius: 10px;
     padding-inline: .5em;
     background-color: var(--accent);
     color: var(--bg-contact);
     box-shadow: 0 0 1em var(--bg-project) opacity(0);
+    text-align: center;
 }
 
 .project:hover::before,
@@ -220,27 +236,6 @@ section > div{
     background-image: url("./markus-spiske-iar-afB0QQw-unsplash.jpg");
 }
 
-@media screen and (max-width: 1200px) {
-    .about, 
-    .projects, 
-    .footer {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    section h2 {
-        text-align: center;
-        padding: 0;
-    }
-
-    .about p {
-        padding: 1em 2em;
-    }
-    
-    .social-links {
-        flex-direction: column;
-    }
-}
 
 @media screen and (max-width: 990px) {
     header {
@@ -248,22 +243,58 @@ section > div{
         align-items: center;
     }
 
+    section {
+        padding: 1.5em 0 3em 0;
+    }
 
     .nav-bar {
         padding: .5em 0;
     }
 
-    .nav-bar a {
+    .nav-bar div {
         margin: 0 1em;
     }
 
     .hero-wrapper {
         flex-direction: column;
     }
+
+    img {
+        margin-top: 2em;
+    }
+
+    .about,
+    .projects {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section h2 {
+        text-align: center;
+        padding: 0;
+    }
+
+    .about p {
+        padding: 1em;
+    }
+
+    .footer {
+        flex-direction: column;
+
+    }
 }
 
-@media screen and (max-width: 521) {
+@media screen and (max-width: 650px) {
     .nav-bar {
+        /* display: flex; */
         flex-direction: column;
+        align-items: center;
+        /* border: 5px red solid; */
+    }
+    .items {
+        flex-wrap: wrap;
+    }
+    .items div {
+        width: 100%;
     }
 }
