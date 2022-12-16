@@ -1,39 +1,36 @@
+/* Set custom properties */
 :root {
     --bg-body: #151515;
     --bg-contact: #242424;
     --accent: #4ee1a0;
     --text: #fff;
     --bg-project: #caffe7;
-    --fs-88: 5.5rem;
-    --fs-72: 4.5rem;
-    --fs-48: 3rem;
-    --fs-40: 2.5rem;
-    --fs-32: 2rem;
-    --fs-24: 1.5rem;
-    --fs-18: 1.125rem;
-    --container: 69.375rem;
     --transition: 250ms ease-in-out;
     --prjct-trans: 100ms ease-in-out;
 }
 
+/* Sets elements to border-box and set text to full base font size */
 html {
     box-sizing: border-box;
     font-size: 100%;
 }
 
+/* Psuedo elements will inherit box sizing */
 *, *::before, *::after {
     box-sizing: inherit;
 }
 
+/* Styling for body and adding font style */
 body {
     margin: 0;
     font-family: 'Space Grotesk', sans-serif;
     background-color: var(--bg-body);
     color: var(--text);
-    font-size: var(--fs-18);
+    font-size: 1.125;
     line-height: 1.56;
 }
 
+/* Styling for sections wrapper */
 .main-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -42,7 +39,7 @@ body {
     margin-inline: auto;
 }
 
-
+/* Header will span full width */
 header {
     max-width: 100%;
     font-size: 1.5rem;
@@ -54,24 +51,20 @@ header {
     margin-inline: auto;
 }
 
+/* Styling for my name in top left */
 header h2 {
     margin: .5em 0;
     padding-inline: .5em;
     border: 1px var(--accent) solid;
     border-radius: .5em;
+    background-color: var(--bg-body);
 }
 
+/* Start of nav links styling */
 nav {
     display: flex;
     align-items: center;
 }
-
-/* .nav-bar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    font-size: 1.5rem;
-    font-size: clamp(1.5rem, 1.02rem + 2.04vw, 2rem);
-} */
 
     .nav-bar {
         display: flex;
@@ -82,6 +75,7 @@ nav {
     margin: 0 0 0 1.4em;
 }
 
+/* Change text color for links when mouse hovers over them */
  a {
     text-decoration: none;
     color: var(--text);
@@ -93,13 +87,14 @@ a:focus {
     color: var(--accent);
 }
 
-
+/* Start of styling for hero section */
 .hero-wrapper {
     flex: 1;
     justify-content: space-around;
     align-items: center;
 }
 
+/* Text will scale down in size with page */
 .hero-text {
     font-size: 1.5rem;
     font-size: clamp(1.5rem, 0.6818181818181818rem + 4.363636363636364vw, 4.5rem);
@@ -112,6 +107,7 @@ strong {
     position: relative;
 }
 
+/* Styling for text in About section */
 .about p {
     font-size: 0.75rem;
     font-size: clamp(0.75rem, 0.5454545454545454rem + 1.090909090909091vw, 1.5rem);
@@ -119,14 +115,16 @@ strong {
     padding-right: 1em;
 }
 
+/* Styling for picture of me */
 img {
     max-height: 394px;
     border: 3px var(--accent) solid;
     border-radius: 7%;
 }
 
+/* Page sections will dispaly as separate blocks with flex items inside */
 section {
-    background-color: #242424;
+    background-color: var(--bg-contact);
     margin: 2em 0 2em 0;
     padding: 3em 0;
     display: flex;
@@ -135,27 +133,26 @@ section {
     border-radius: 15px;
 }
 
+/* Styling for page section headers */
 section h2 {
     text-align: left;
     padding: 0 .25em 0 1em;
     text-decoration: underline var(--accentd);
-    font-size: var(--fs-48);
+    font-size: 3rem;
 }
 
+/* Content inside page sections will have initial size of 75% of section */
 section > div{
     flex: 0 0 75%;
 }
 
+/* Start of styling for Projects section */
 .projects-div a {
     margin: .25em;
 }
 
 .projects-div {
     padding: 1em 2em;
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1fr 1fr; */
-    gap: 1em;
     justify-content: end;
 }
 
@@ -191,12 +188,13 @@ section > div{
     right: 0;
     border-radius: .7em;
     box-shadow:
-        inset 0 0 1em var(--bg-project),
-        0 0 1em var(--bg-project);
+    inset 0 0 1em var(--bg-project),
+    0 0 1em var(--bg-project);
     opacity: 0;
     transition: opacity var(--prjct-trans);
 }
 
+/* Styling for project titles */
 .project h3 {
     border-radius: 10px;
     padding-inline: .5em;
@@ -206,11 +204,13 @@ section > div{
     text-align: center;
 }
 
+/* Add glow to projects when in hover state */
 .project:hover::before,
 .project:focus::before {
     opacity: 1;
 }
 
+/* Styling for content in Contact section */
 .social-links {
     font-size: 1.5rem;
     display: flex;
@@ -218,6 +218,7 @@ section > div{
     align-items: center;
 }
 
+/* Background images for projects */
 .netrobe {
     background-size: 90%;
     min-height: 460px;
@@ -236,7 +237,7 @@ section > div{
     background-image: url("./markus-spiske-iar-afB0QQw-unsplash.jpg");
 }
 
-
+/* Begin stacking elements as screen shortens width */
 @media screen and (max-width: 990px) {
     header {
         flex-direction: column;
@@ -284,17 +285,23 @@ section > div{
     }
 }
 
+/* Stack nav links, projects and social links */
 @media screen and (max-width: 650px) {
     .nav-bar {
-        /* display: flex; */
         flex-direction: column;
         align-items: center;
-        /* border: 5px red solid; */
     }
+
     .items {
         flex-wrap: wrap;
     }
+
     .items div {
         width: 100%;
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: column;
     }
 }
