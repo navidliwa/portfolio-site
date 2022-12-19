@@ -2,7 +2,7 @@
 
 ## Description
 
- This is a personal site meant to give a brief description of my aim as a developer. There are also links to projects (placeholders for now) that I've worked on as a developer and a contact section with links to my socials for to get in touch.
+ This is a personal site meant to give a brief description of my aim as a developer. There are also links to projects (placeholders for now) that I've worked on as a developer and a contact section with links to my socials to get in touch.
 
  ## Usage
 
