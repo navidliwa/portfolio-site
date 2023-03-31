@@ -223,9 +223,6 @@ section > div{
     background-size: 90%;
     min-height: 460px;
     grid-column: span 2;
-}
-
-.netrobe {
     background-image: url("./jacket.jpg");
 }
 
@@ -235,6 +232,10 @@ section > div{
 
 .dog-bytes {
     background-image: url("./dog-bytes-screenshot.PNG");
+}
+
+.plotpoint {
+    background-image: url("./dashboard.jpg");
 }
 
 .placeholder {
